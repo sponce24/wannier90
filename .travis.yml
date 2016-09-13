@@ -1,0 +1,17 @@
+# I use c language to have at least make and similar
+language: c
+addons:
+  apt:
+    packages:
+        - gfortran 
+        - libblas-dev 
+        - liblapack-dev 
+install:
+    - cp config/make.sys.gfort make.sys
+    - make -j wannier post
+#before_script:
+#    - ...
+script:
+    - make test
+git:
+  depth: 3
